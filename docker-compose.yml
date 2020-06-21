@@ -4,12 +4,7 @@ services:
   laravel-app:
     build:
       context: '.'
-      args:
-        uid: ${UID}
     container_name: laravel-app
-    environment:
-      - APACHE_RUN_USER=#${UID}
-      - APACHE_RUN_GROUP=#${UID}
     volumes:
       - .:/var/www/html
     ports:
@@ -24,6 +19,9 @@ services:
     container_name: mysql-db
     volumes:
       - persistent:/var/lib/mysql
+    ports: 
+      - "1234:3306"
+    command: --default-authentication-plugin=mysql_native_password  
     environment:
       - MYSQL_ROOT_PASSWORD=securerootpassword
       - MYSQL_DATABASE=db
