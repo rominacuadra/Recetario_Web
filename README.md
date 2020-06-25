@@ -50,3 +50,14 @@ Laravel skeleton for new proyect
 
 8. Check URL:
 ` http://laravel-app.local:8000`
+
+9. Check Mysql Connection:
+``` 
+  Make sure .env DB_HOST set to what mysql-db service name, or its aliases: .env `
+  DB_HOST=mysql-db 
+  DB_PORT=3306 
+  
+  Run:
+  $ docker exec -it laravel-app bash
+  root@5073d6744f63:/var/www/html# php artisan migrate
+```  
