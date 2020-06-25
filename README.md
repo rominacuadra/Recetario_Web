@@ -2,6 +2,7 @@
 Laravel skeleton for new proyect
 
 ## Webserver image for Laravel
+`Laravel Framework 7.9.2`
 `php:7.3-apache` 
 
 ## Database image 
